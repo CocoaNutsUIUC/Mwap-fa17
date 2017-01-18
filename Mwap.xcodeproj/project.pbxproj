@@ -22,6 +22,7 @@
 		B84CEA571E2D180700030BC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B84CEA5A1E2D180700030BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84CEA5C1E2D180700030BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B84CEA631E2D195B00030BC7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 			children = (
 				B84CEA4F1E2D180700030BC7 /* Mwap */,
 				B84CEA4E1E2D180700030BC7 /* Products */,
+				B84CEA621E2D195B00030BC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +64,14 @@
 				B84CEA5C1E2D180700030BC7 /* Info.plist */,
 			);
 			path = Mwap;
+			sourceTree = "<group>";
+		};
+		B84CEA621E2D195B00030BC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B84CEA631E2D195B00030BC7 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +312,7 @@
 				B84CEA611E2D180700030BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
