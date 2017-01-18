@@ -76,23 +76,36 @@ class ViewController: UIViewController {
 		}
 		
 		let coords = location.coordinate
-		gpsDescription = "<\(pretty(coords.latitude, numDigits: 6)), \(pretty(coords.longitude, numDigits: 6))> ± \(Int(location.horizontalAccuracy)) m"
+		gpsDescription = "<\(pretty(coords.latitude, numDigits: 5)), \(pretty(coords.longitude, numDigits: 5))> ± \(Int(location.horizontalAccuracy)) m"
 		
 		altitudeDescription = "\(pretty(location.altitude)) m ± \(Int(location.verticalAccuracy)) m"
 		
-		// Convert m/s to mph to figure out the speed.
-		let MPH_PER_MS = 2.23694
-		let speed_mph = location.speed * MPH_PER_MS
-		speedDescription = "\(pretty(location.speed)) m/s (\(pretty(speed_mph)) mph)"
+		// Handle the speed.
+		if location.speed >= 0 {
+			// Convert m/s to mph to figure out the speed.
+			let MPH_PER_MS = 2.23694
+			let speed_mph = location.speed * MPH_PER_MS
+			speedDescription = "\(pretty(location.speed)) m/s (\(pretty(speed_mph)) mph)"
+		} else {
+			// Invalid speed.
+			speedDescription = "Unknown"
+		}
 		
 		// Heading is the direction in which the device is traveling.
-		headingDescription = "\(pretty(location.course, numDigits: 1))˚"
+		if location.course >= 0 {
+			headingDescription = "\(pretty(location.course, numDigits: 1))˚"
+		} else {
+			// Invalid heading.
+			headingDescription = "Unknown"
+		}
 		
 		// Get the device orientation (which way the device is pointing).
-		if let deviceHeading = userLocation.heading {
+		if let deviceHeading = userLocation.heading,
+			deviceHeading.headingAccuracy >= 0
+		{
 			orientationDescription = "\(pretty(deviceHeading.trueHeading, numDigits: 1))˚ ± \(pretty(deviceHeading.headingAccuracy, numDigits: 1))˚"
 		} else {
-			orientationDescription = "Unable to determine current heading."
+			orientationDescription = "Unknown"
 		}
 		
 		lastUpdatedDescription = "\(pretty(location.timestamp))"
