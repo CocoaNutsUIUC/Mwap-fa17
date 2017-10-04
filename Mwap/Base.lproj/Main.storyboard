@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,17 +26,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c88-dI-2Pv">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Q2v-BH-Ax3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Vx-0m-6A0">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PB3-wq-8iV">
                                 <rect key="frame" x="0.0" y="585.5" width="375" height="81.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Location: &lt;+40.114418, -88.225302&gt; ± 100 m
 Altitude: 1,136 m ± 10 m
-Speed:    12.2 m/s ± 1.0 m/s (27.3 mph)
-Bearing:  12.1˚ ± 2.0˚
-Last Updated: 2/9/17 at 9:41:00 AM</string>
+Speed: 12.2 m/s ± 1.0 m/s (27.3 mph)
+Bearing: 12.1˚ ± 2.0˚
+Last Updated: 10/5/17 at 9:41:00 AM</string>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,18 +45,14 @@ Last Updated: 2/9/17 at 9:41:00 AM</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Vx-0m-6A0" secondAttribute="bottom" id="0zR-6D-pgY"/>
-                            <constraint firstItem="c88-dI-2Pv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cq1-Np-Qb3"/>
-                            <constraint firstAttribute="bottom" secondItem="c88-dI-2Pv" secondAttribute="bottom" id="DE2-7U-c6l"/>
-                            <constraint firstItem="c88-dI-2Pv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IeW-Ca-5Zn"/>
-                            <constraint firstAttribute="trailing" secondItem="c88-dI-2Pv" secondAttribute="trailing" id="Ox3-dS-KXb"/>
-                            <constraint firstAttribute="trailing" secondItem="8Vx-0m-6A0" secondAttribute="trailing" id="hFF-bg-gS6"/>
-                            <constraint firstItem="8Vx-0m-6A0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o6B-eQ-AGO"/>
+                            <constraint firstItem="PB3-wq-8iV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kn9-sg-j7t"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PB3-wq-8iV" secondAttribute="bottom" id="PRV-gt-H2b"/>
+                            <constraint firstAttribute="trailing" secondItem="PB3-wq-8iV" secondAttribute="trailing" id="SKV-Nk-P6L"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationLabel" destination="8Vx-0m-6A0" id="zkm-c4-wzg"/>
-                        <outlet property="mapView" destination="c88-dI-2Pv" id="6oB-jO-dD0"/>
+                        <outlet property="locationLabel" destination="PB3-wq-8iV" id="XH4-FS-6MZ"/>
+                        <outlet property="mapView" destination="Q2v-BH-Ax3" id="YjV-Bs-oe5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
