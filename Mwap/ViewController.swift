@@ -78,7 +78,8 @@ class ViewController: UIViewController {
 		let coords = location.coordinate
 		gpsDescription = "<\(pretty(coords.latitude, numDigits: 5)), \(pretty(coords.longitude, numDigits: 5))> ± \(Int(location.horizontalAccuracy)) m"
 		
-		altitudeDescription = "\(pretty(location.altitude)) m ± \(Int(location.verticalAccuracy)) m"
+    let FEET_PER_METER = 3.281
+		altitudeDescription = "\(pretty(location.altitude)) m ± \(Int(location.verticalAccuracy)) m (\(Int(location.altitude * FEET_PER_METER))' ± \(Int(location.verticalAccuracy * FEET_PER_METER))')"
 		
 		// Handle the speed.
 		if location.speed >= 0 {
